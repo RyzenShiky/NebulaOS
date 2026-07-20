@@ -1,0 +1,44 @@
+/* =========================================================
+   window-manager.css
+   Anatomi jendela aplikasi: batang judul, tombol aksi,
+   pembatas ukuran (resize), dan ikon saat diminimize.
+   Posisi/ukuran aktual jendela (termasuk hasil Tile Windows)
+   dihitung di JS lalu diterapkan lewat inline style, jadi
+   file ini cuma mengatur tampilan visualnya.
+   ========================================================= */
+.window{
+  position:absolute;background:var(--win-bg);
+  border:2px solid #000;
+  box-shadow:2px 2px 0 rgba(0,0,0,0.4);
+  min-width:180px;min-height:120px;
+  display:flex;flex-direction:column;
+}
+.titlebar{
+  height:20px;background:var(--title-inactive);color:var(--title-text);
+  display:flex;align-items:center;padding:0 3px;cursor:move;flex:0 0 auto;
+  font-weight:bold;letter-spacing:0.3px;
+}
+.window.active .titlebar{background:var(--title-active);}
+.titlebar .ttext{flex:1;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;padding-left:4px;font-size:12px;}
+.tbtn{
+  width:16px;height:14px;background:var(--btn-face);border:1px solid #000;
+  display:flex;align-items:center;justify-content:center;margin-left:2px;
+  font-size:9px;cursor:pointer;color:#000;font-family:var(--mono);line-height:1;
+}
+.tbtn:active{background:#888;}
+.mic-indicator{color:#ffff55;font-size:10px;margin-right:4px;white-space:nowrap;}
+.menubar{
+  background:var(--win-bg);border-bottom:1px solid #000;display:flex;font-size:12px;flex:0 0 auto;
+}
+.menubar .mitem{padding:2px 8px;cursor:pointer;}
+.menubar .mitem:hover{background:var(--title-active);color:#fff;}
+.winbody{flex:1;overflow:auto;background:#fff;position:relative;padding:0;}
+.win-resize{
+  position:absolute;right:0;bottom:0;width:14px;height:14px;cursor:nwse-resize;
+  background:repeating-linear-gradient(135deg,#808080 0 2px,transparent 2px 4px);
+}
+.win-min-icon{
+  position:absolute;bottom:6px;background:var(--win-bg);border:2px solid #000;
+  width:150px;height:24px;display:flex;align-items:center;padding:0 4px;color:#000;
+  box-shadow:2px 2px 0 rgba(0,0,0,0.4);cursor:pointer;font-size:11px;
+}

@@ -1,0 +1,17 @@
+/* =========================================================
+   theme-schemes.css
+   Seluruh variabel warna sistem berkumpul di sini. Control
+   Panel mengganti isi variabel ini lewat JS (document.documentElement.style.setProperty),
+   jadi ganti tema tidak pernah menyentuh ukuran/posisi jendela atau file CSS lain.
+   ========================================================= */
+:root{
+  --desk-bg:#008080;
+  --win-bg:#c0c0c0;
+  --win-border:#000000;
+  --title-active:#000080;
+  --title-inactive:#808080;
+  --title-text:#ffffff;
+  --btn-face:#c0c0c0;
+  --mono:'Courier New', monospace;
+  --ui:'MS Sans Serif','Segoe UI',Tahoma,sans-serif;
+}
