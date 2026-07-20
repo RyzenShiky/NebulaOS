@@ -1,0 +1,27 @@
+/* =========================================================
+   games.css — panel multiplayer + HUD game retro
+   ========================================================= */
+.mp-panel{padding:10px;font-family:var(--ui);font-size:12px;}
+.mp-tabs{display:flex;gap:4px;margin-bottom:8px;}
+.mp-tab-btn{background:var(--btn-face);border:2px outset #fff;padding:3px 12px;cursor:pointer;font-size:12px;}
+.mp-tab-btn.active{border-style:inset;background:#a0a0a0;}
+.mp-mic{display:block;margin-bottom:8px;font-size:11px;}
+.mp-mode textarea{width:100%;height:54px;font-family:var(--mono);font-size:10px;margin:4px 0;resize:vertical;}
+.mp-hint{font-size:10px;color:#555;margin-top:4px;}
+.mp-status{margin:10px 0;padding:5px;background:#eee;border:1px solid #999;font-size:11px;min-height:16px;}
+.mp-status.mp-waiting{background:#fff6c2;border-color:#d4a017;animation:mpPulse 1.2s ease-in-out infinite;font-weight:bold;}
+@keyframes mpPulse{0%,100%{opacity:1;}50%{opacity:0.55;}}
+.mp-step{font-size:10px;color:#333;margin:6px 0 3px;}
+.mp-local-sep{text-align:center;color:#999;font-size:10px;margin:10px 0 4px;}
+
+.game-wrap{position:relative;width:100%;height:100%;background:#000;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.game-wrap canvas{display:block;background:#000;}
+.game-hud{position:absolute;top:4px;left:4px;color:#0f0;font-family:var(--mono);font-size:11px;text-shadow:1px 1px 0 #000;pointer-events:none;}
+.game-hud-right{position:absolute;top:4px;right:4px;color:#0f0;font-family:var(--mono);font-size:11px;text-shadow:1px 1px 0 #000;pointer-events:none;text-align:right;}
+.game-crosshair{position:absolute;top:50%;left:50%;width:16px;height:16px;margin:-8px 0 0 -8px;pointer-events:none;}
+.game-crosshair::before,.game-crosshair::after{content:'';position:absolute;background:#0f0;}
+.game-crosshair::before{left:7px;top:0;width:2px;height:16px;}
+.game-crosshair::after{top:7px;left:0;width:16px;height:2px;}
+.game-lockhint{position:absolute;bottom:8px;left:0;right:0;text-align:center;color:#0f0;font-family:var(--mono);font-size:11px;text-shadow:1px 1px 0 #000;}
+.game-mic-badge{color:#ff5;margin-left:6px;}
+.game-overlay-btn{position:absolute;inset:0;background:rgba(0,0,0,0.6);display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--ui);cursor:pointer;text-align:center;padding:20px;}
